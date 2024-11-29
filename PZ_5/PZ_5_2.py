@@ -4,39 +4,32 @@ C — вещественные параметры, являющиеся одно
 выходными). С помощью этой функции упорядочить по убыванию два данных
 набора из трех чисел: (A1, B1, C1) и (A2, B2, C2)."""
 
-input
-def SortDec(A, B, C):
-    if A >= B and A >= C:
-        max_num = A
-        if B >= C:
-            mid_num = B
-            min_num = C
-        else:
-            mid_num = C
-            min_num = B
-    elif B >= A and B >= C:
-        max_num = B
-        if B >= C:
-            mid_num = A
-            min_num = C
-        else:
-            mid_num = C
-            min_num = A
-    else:
-        max_num = C
-        if A >= B:
-            mid_num = A
-            min_num = B
-        else:
-            mid_num = B
-            min_num = A
-
-    return max_num, mid_num, min_num
-
-# Сортируем первый набор чисел
-print("Первый набор отсортирован:", first_number1 = first_number1, first_number2 = first_number2, first_number3 = first_number3")
-
-# Сортируем второй набор чисел
-second_number1, second_number2, second_number3 = sort_numbers_descending(second_number1, second_number2, second_number3)
-print(
-    f"Второй набор отсортирован: second_number1 = {second_number1}, second_number2 = {second_number2}, second_number3 = {second_number3}")
+# Запрашиваем первые три числа у пользователя
+numbers1 = input("Введите первый набор данных из трёх чисел (через пробел): ").split()
+# Запрашиваем вторые три числа у пользователя
+numbers2 = input("Введите второй набор данных из трёх чисел (через пробел): ").split()
+# Превращаем введенные числа в список вещественных чисел
+try:
+    numbers1 = [float(num) for num in numbers1]
+    numbers2 = [float(num) for num in numbers2]
+except ValueError:
+    print("Ошибка: убедитесь, что все введенные данные являются числами или ввыдены с пробелом без других знаков.")
+    exit()
+# Проверяем, что введено ровно три числа
+if len(numbers1) != 3 or len(numbers2) != 3:
+    print("Пожалуйста, введите ровно три числа.")
+else:
+    # Создаём переменные A1, B1, C1, A2, B2, C2 и присваиваем им значение из списка numbers1 и numbers2
+    A1, B1, C1 = numbers1
+    A2, B2, C2 = numbers2
+    # Делаем функцию которая распределяет числа от большего к меньшему
+    def SortDec(num1, num2, num3):
+        max_num = max(num1, num2, num3)
+        min_num = min(num1, num2, num3)
+        mid_num = num1 + num2 + num3 - max_num - min_num
+        return max_num, mid_num, min_num
+    # Сортируем первый набор чисел
+    sorted_nums1 = SortDec(A1, B1, C1)
+    sorted_nums2 = SortDec(A2, B2, C2)
+    print("Первый набор отсортирован: ", sorted_nums1[0], sorted_nums1[1], sorted_nums1[2])
+    print("Второй набор отсортирован: ", sorted_nums2[0], sorted_nums2[1], sorted_nums2[2])
