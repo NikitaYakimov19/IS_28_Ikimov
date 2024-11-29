@@ -3,9 +3,10 @@
 полученных линий."""
 
 def videlenie_word(word):
-    "Обрамляет слово в рамку из линий."
-    print('-' * (len(word) + 4))      # верхняя линия
-    print("|", word, "|")               # слово с рамкой
-    print('-' * (len(word) + 4))      # нижняя линия
-word = input("Введите слово: ")
-videlenie_word(word)
+    # Обрамляет слово в рамку из линий.
+    print('-' * (len(word) + 4))  # верхняя линия
+    print("|", word, "|")  # слово с рамкой
+    print('-' * (len(word) + 4))  # нижняя линия
+
+word1 = input("Введите слово: ")
+videlenie_word(word1)
