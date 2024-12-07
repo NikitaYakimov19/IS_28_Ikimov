@@ -25,9 +25,7 @@ try:
         user_input[max_index] = min_value
         user_input[min_index] = max_value
 
-        # Выводим измененный список как строку без скобок и запятой
-        result = ', '.join(map(str, user_input))
-        print("Поменяв местами максимальный и минимальный элемент списка получилось: ", result)
+        print("Поменяв местами максимальный и минимальный элемент списка получилось: ", user_input)
 
 except ValueError:
     print("Ошибка: Убедитесь, что вы ввели корректные целые числа.")
