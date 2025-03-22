@@ -17,7 +17,7 @@ if 'молоко' in pyat and 'сыр' in pyat:
 else:
     b = None
 if 'молоко' in perekr and 'сыр' in perekr:
-    c = "в Перекрёстке"
+    c = "в Перекрестке"
 else:
     c = None
 result = '2)Магазины, в которых можно приобрести одновременно молоко и сыр:'
